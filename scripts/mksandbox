@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Create a per-pkgbuild chroot area.
 #
@@ -215,7 +215,7 @@ if [ -n "${TOOLS_BOOTSTRAP}" ]; then
 		tools_packages="${tools_packages} ${gpgpkg} libtool-base nodejs"
 		;;
 	esac
-	/usr/sbin/chroot ${chrootdir} /bin/bash -c "
+	/usr/sbin/chroot ${chrootdir} /usr/bin/env bash -c "
 		${CMD_TAR} -zxf ${LOCAL_PACKAGE_BASEDIR}/${BOOTSTRAP_PBULK_DIR}/${TOOLS_BOOTSTRAP} -C /
 		export PKG_SKIP_SMF=yes
 		if [ ${USE_LOCAL_PKG_PATH} = yes ]; then

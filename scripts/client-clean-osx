@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Script executed from pbulk client-clean to clean up the chroot prior to each
 # build starting.  Sourced from a script which has 'set -e' so ensure commands

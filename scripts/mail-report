@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Custom mailer to avoid limitations of simply calling mailx.  Basically we
 # want to customise the "From:".

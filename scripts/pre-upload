@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Script to sanity check a package set prior to running the upload phase.
 #
