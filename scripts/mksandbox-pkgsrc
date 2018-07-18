@@ -288,6 +288,9 @@ case "$opsys" in
 SunOS)
 	$cpprog /etc/TIMEZONE $sandbox/etc/TIMEZONE
 	;;
+FreeBSD)
+	$cpprog /usr/share/zoneinfo/UTC $sandbox/etc/localtime
+	;;
 *)
 	$cpprog /usr/share/zoneinfo/GMT $sandbox/etc/localtime
 	;;
