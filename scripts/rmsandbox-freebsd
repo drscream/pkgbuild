@@ -1,0 +1,38 @@
+#!/usr/bin/env bash
+
+if [ $# -eq 1 ]; then
+	chrootdir="${1%%/}"; shift
+else
+	echo "usage: $0 <chrootdir>" >&2
+	exit 2
+fi
+
+if [ "$(uname -s)" != "FreeBSD" ]; then
+	echo "ERROR: Script is only suitable for FreeBSD." >&2
+	exit 1
+fi
+
+if [ -d ${chrootdir} ]; then
+
+	# Kill off processes first to avoid umount failures.
+	pids=$(fuser ${chrootdir} 2>/dev/null)
+	if [ -n "${pids}" ]; then
+		kill -9 ${pids} 2>/dev/null
+	fi
+
+	#
+	# Don't exit until all mounts are gone, if this hangs then at least
+	# we get a chance to look into why and fix it.
+	#
+	while true; do
+		${chrootdir}/sandbox umount >/dev/null 2>&1
+		mounts=`mount -v | grep "${chrootdir}/"`
+		if [ -z "${mounts}" ]; then
+			rm -rf ${chrootdir}
+			break
+		else
+			echo "Waiting for delete all mount points"	
+			sleep 5
+		fi
+	done
+fi
