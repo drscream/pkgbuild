@@ -7,8 +7,8 @@ else
 	exit 2
 fi
 
-if [ "$(uname -s)" != "Linux" ]; then
-	echo "ERROR: Script is only suitable for Linux." >&2
+if [ "$(uname -s)" != "FreeBSD" ]; then
+	echo "ERROR: Script is only suitable for FreeBSD." >&2
 	exit 1
 fi
 
@@ -31,6 +31,7 @@ if [ -d ${chrootdir} ]; then
 			rm -rf ${chrootdir}
 			break
 		else
+			echo "Waiting for delete all mount points"	
 			sleep 5
 		fi
 	done

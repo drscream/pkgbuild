@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Create the final bootstrap kit for each pkgbuild.
 #
@@ -43,7 +43,7 @@ UPGRADE_TAR="${LOCAL_PACKAGE_BASEDIR}/${BOOTSTRAP_RELEASE_DIR}/${BOOTSTRAP_KIT}$
 UPGRADE_ASC="${UPGRADE_TAR}.asc"
 
 ${CHROOT_CREATE} ${CHROOT_BASEDIR}/bootstrap-${pkgbuild}
-/usr/sbin/chroot ${CHROOT_BASEDIR}/bootstrap-${pkgbuild} /bin/bash -c "
+/usr/sbin/chroot ${CHROOT_BASEDIR}/bootstrap-${pkgbuild} /usr/bin/env bash -c "
 	set -e
 	PATH=${PBULK_PATH}
 	${CMD_TAR} -zxf ${LOCAL_PACKAGE_BASEDIR}/${BOOTSTRAP_PBULK_DIR}/${BOOTSTRAP_KIT}.tar.gz -C /

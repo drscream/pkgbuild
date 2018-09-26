@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Simple script to run a bulk build in a loop at most once per day.
 #

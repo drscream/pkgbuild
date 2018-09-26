@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 #
 # Create a shadowed sandbox from the root file system ready for builds.
 #
@@ -210,7 +210,7 @@ if [ -n "${TOOLS_BOOTSTRAP}" ]; then
 		tools_packages="${tools_packages} gnupg nodejs"
 		;;
 	esac
-	/usr/sbin/chroot ${chrootdir} /bin/bash -c "
+	/usr/sbin/chroot ${chrootdir} /usr/bin/env bash -c "
 		${CMD_TAR} -zxf ${LOCAL_PACKAGE_BASEDIR}/${BOOTSTRAP_PBULK_DIR}/${TOOLS_BOOTSTRAP} -C /
 		if [ ${USE_LOCAL_PKG_PATH} = yes ]; then
 			cat >>${TOOLS_BASEDIR}/etc/pkg_install.conf <<-EOF

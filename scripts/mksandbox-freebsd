@@ -11,8 +11,8 @@ else
 	exit 2
 fi
 
-if [ "$(uname -s)" != "Linux" ]; then
-        echo "ERROR: Script is only suitable for Linux." >&2
+if [ "$(uname -s)" != "FreeBSD" ]; then
+        echo "ERROR: Script is only suitable for FreeBSD." >&2
         exit 1
 fi
 
@@ -42,12 +42,14 @@ if [ ! -f $(dirname $0)/../conf/${pkgbuild}/pkgbuild.conf ]; then
 fi
 . $(dirname $0)/../conf/${pkgbuild}/pkgbuild.conf
 
-# We use the pkgtools/mksandbox script on Linux as it works well.
+echo "${LOFS_RO_MOUNTS_FREEBSD} ${LOFS_RW_MOUNTS_FREEBSD}"
+
+# We use the pkgtools/mksandbox script on FreeBSD as it works well.
 ${PKGBUILD_BASEDIR}/scripts/mksandbox-pkgsrc \
     --without-pkgsrc \
-    --rodirs=${LOFS_RO_MOUNTS_LINUX} \
-    --rwdirs=${LOFS_RW_MOUNTS_LINUX} \
-    ${chrootdir} >/dev/null 2>&1
+    --rodirs=${LOFS_RO_MOUNTS_FREEBSD} \
+    --rwdirs=${LOFS_RW_MOUNTS_FREEBSD} \
+    ${chrootdir} >/dev/null
 
 mkdir -p ${chrootdir}/root
 rsync -a /root/.ssh ${chrootdir}/root/
