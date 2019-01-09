@@ -5,8 +5,6 @@ joyent/celt051
 joyent/cgatools
 joyent/changepass
 joyent/chef-client
-joyent/clang6
-joyent/compiler-rt6
 joyent/couchdb17
 joyent/ctftools
 joyent/dtracetools
@@ -14,12 +12,8 @@ joyent/enstratus-agent
 joyent/gnupg20
 joyent/handlersocket
 joyent/instantclient
-joyent/libcxx6
-joyent/libcxxabi6
 joyent/libsass
 joyent/libspice
-joyent/libunwind6
-joyent/llvm6
 joyent/mariadb100-client
 joyent/mariadb100-server
 joyent/mms-agent
@@ -63,7 +57,6 @@ joyent/percona57-cluster
 joyent/percona57-server
 joyent/pgagent
 joyent/phantomjs-static
-joyent/php-ioncube
 joyent/php-mailparse
 joyent/php-sphinx
 joyent/pkgsrc-gnupg-keys
@@ -96,9 +89,6 @@ wip/leveldb
 wip/libcouchbase
 wip/libeio
 wip/mtop
-wip/munin-common
-wip/munin-master
-wip/munin-node
 wip/ncbi
 wip/ncbi-bin
 wip/ncbi-blast
@@ -137,7 +127,6 @@ wip/ruby-therubyracer
 wip/ruby-xmpp4r
 wip/runit
 wip/smstools
-wip/spidermonkey24
 wip/spread4
 wip/swftools
 wip/tftp-hpa
