@@ -28,6 +28,9 @@ joyent/node4
 joyent/nodejs
 joyent/nrsysmond
 joyent/nutcracker
+joyent/openjdk9
+joyent/openjdk10
+joyent/openjdk11
 joyent/ossec-agent
 joyent/ossec-local
 joyent/ossec-server
@@ -55,6 +58,8 @@ joyent/percona56-server
 joyent/percona57-client
 joyent/percona57-cluster
 joyent/percona57-server
+joyent/percona80-client
+joyent/percona80-server
 joyent/pgagent
 joyent/phantomjs-static
 joyent/php-mailparse
@@ -71,10 +76,6 @@ joyent/ruby-httpclient
 joyent/ruby-memcache-client
 joyent/ruby-rest-client
 joyent/ruby-soap4r
-joyent/scmgit
-joyent/scmgit-base
-joyent/scmgit-docs
-joyent/scmgit-gitk
 joyent/smtools
 joyent/spice-protocol
 joyent/trafficserver
@@ -85,6 +86,7 @@ wip/bioruby
 wip/erlang-basho
 wip/fswatch
 wip/gecode
+wip/gitea
 wip/leveldb
 wip/libcouchbase
 wip/libeio
@@ -93,7 +95,6 @@ wip/ncbi
 wip/ncbi-bin
 wip/ncbi-blast
 wip/ncbi-lib
-wip/netatalk
 wip/oce
 wip/p5-Frontier-RPC
 wip/p5-Imager
@@ -118,12 +119,9 @@ wip/py-scikits_optimization
 wip/py-scikits_samplerate
 wip/py-scikits_scattpy
 wip/py-scikits_talkbox
-wip/py-scikits_timeseries
 wip/py-scikits_vectorplot
 wip/pyzor
 wip/riak
-wip/ruby-libv8
-wip/ruby-therubyracer
 wip/ruby-xmpp4r
 wip/runit
 wip/smstools
@@ -132,8 +130,6 @@ wip/swftools
 wip/tftp-hpa
 wip/truecrypt
 wip/u-boot
-wip/v8
-wip/v8-316
 wip/vmware-sercons
 wip/wackamole
 wip/wkhtmltopdf
