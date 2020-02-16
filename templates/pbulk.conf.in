@@ -4,10 +4,10 @@
 #
 PATH=@PBULK_PATH@
 
-# Limit processes to an hour of CPU time.  Anything using this much is most
-# likely broken.
+# Limit processes by CPU time.  Really this should be moved to mk.conf and set
+# on a per-package basis, as some (e.g. Rust) may require more than others.
 #
-ulimit -t 3600
+ulimit -t @CPU_TIME@
 
 # Version of the configuration file. This is bumped whenever the default
 # config changes to notify the administrator about updates.
@@ -21,7 +21,7 @@ pi_required=@PI_REQUIRED@
 # The URL where the build report will be made available. This is only
 # used in the .txt version of the report.
 #
-base_url=http://us-east.manta.joyent.com/@MANTA_USER@/public/reports/@REPORT_DIR@
+base_url=https://us-east.manta.joyent.com/@MANTA_USER@/public/reports/@REPORT_DIR@
 
 # If yes, keep the last scan results in ${bulklog}.orig and try to reuse them.
 #
@@ -46,6 +46,7 @@ MANTA_SUBUSER="@MANTA_SUBUSER@"
 MANTA_KEY_ID="@MANTA_KEY_ID@"
 MANTA_URL="https://us-east.manta.joyent.com"
 MANTA_PATH="@MANTA_PATH@"
+MANTA_SYNC_ARGS="@MANTA_SYNC_ARGS@"
 
 # Some flags for the programs that publish the binary packages and the
 # build report. If you want to disable the publishing at all, see below.

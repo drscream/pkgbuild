@@ -3,9 +3,14 @@
 #
 
 # Packages which currently hang the build
-.if !empty(PKGPATH:Mgraphics/rayshade) \
+.if !empty(PKGPATH:Mgames/crimsonfields) \
+ || !empty(PKGPATH:Mgames/freeciv-client) \
+ || !empty(PKGPATH:Mgraphics/rayshade) \
  || !empty(PKGPATH:Mlang/jamvm) \
+ || !empty(PKGPATH:Mlang/mono6) \
  || !empty(PKGPATH:Mmail/elm) \
+ || !empty(PKGPATH:Mmultimedia/acidrip) \
+ || !empty(PKGPATH:Mmultimedia/dumpmpeg) \
  || !empty(PKGPATH:Mnet/gtk-gnutella) \
  || !empty(PKGPATH:Mnews/knews) \
  || !empty(PKGPATH:Mshells/pdksh) \
@@ -46,7 +51,7 @@ WRKOBJDIR=		/Users/pbulk/build-disk
 
 # OSX does not perform name resolution in a chroot, so we need to hardcode
 # entries in /etc/hosts and override the default site.
-MASTER_SITE_OVERRIDE=	http://ftp.NetBSD.org/pub/pkgsrc/distfiles/
+MASTER_SITE_OVERRIDE=	http://cdn.NetBSD.org/pub/pkgsrc/distfiles/
 
 # Fix GCC builds
 MULTILIB_SUPPORTED=	no

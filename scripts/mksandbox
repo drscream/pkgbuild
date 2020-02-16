@@ -3,6 +3,11 @@
 # Create a per-pkgbuild chroot area.
 #
 
+if [ "$(uname -s)" != "SunOS" ]; then
+	echo "ERROR: Script is only suitable for SunOS." >&2
+	exit 1
+fi
+
 set -e
 
 PATH=/sbin:/usr/sbin:/usr/bin
@@ -13,11 +18,6 @@ if [ $# -eq 1 ]; then
 else
 	echo "usage: $0 <chrootdir>" >&2
 	exit 2
-fi
-
-if [ "$(uname -s)" != "SunOS" ]; then
-	echo "ERROR: Script is only suitable for SunOS." >&2
-	exit 1
 fi
 
 if [ -d "${chrootdir}" ]; then
@@ -82,6 +82,13 @@ done
 #
 # NFS mounts.
 #
+for mount in ${NFS_RO_MOUNTS}; do
+	src=${mount%=*}
+	dst=${mount#*=}
+	mkdir -p ${chrootdir}${dst}
+	mount -F nfs -o ro ${NFS_OPTIONS} ${src} ${chrootdir}${dst}
+done
+
 for mount in ${NFS_MOUNTS}; do
 	src=${mount%=*}
 	dst=${mount#*=}
@@ -203,6 +210,15 @@ if [ -n "${TOOLS_BOOTSTRAP}" ]; then
 	case "${pkgbuild}" in
 	2017Q4-*|201[89]Q*|20[2-9][0-9]Q*|trunk-*)
 		tools_packages="${tools_packages} ctftools"
+		;;
+	esac
+	#
+	# This is currently only configured for trunk-x86_64 and 2019Q4
+	# onwards, but should really be cleaner.  Required for rpcgen.
+	#
+	case "${pkgbuild}" in
+	2019Q4-x86_64|20[2-9]Q*-x86_64|trunk-x86_64)
+		tools_packages="${tools_packages} smartos-build-tools"
 		;;
 	esac
 	case "${chrootname}" in
