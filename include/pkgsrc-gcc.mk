@@ -12,6 +12,7 @@
  || !empty(PKGPATH:Mdevel/gmake) \
  || !empty(PKGPATH:Mdevel/nbpatch) \
  || !empty(PKGPATH:Mjoyent/ctftools) \
+ || !empty(PKGPATH:Mjoyent/gcc9) \
  || !empty(PKGPATH:Mlang/gcc2) \
  || !empty(PKGPATH:Mlang/gcc3*) \
  || !empty(PKGPATH:Mlang/gcc4?) \
