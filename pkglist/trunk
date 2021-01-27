@@ -15,8 +15,6 @@ joyent/gnupg20
 joyent/libsass
 joyent/libspice
 joyent/libutempter
-joyent/mariadb100-client
-joyent/mariadb100-server
 joyent/mms-agent
 joyent/mongodb30
 joyent/neo4j
@@ -30,6 +28,7 @@ joyent/openjdk12
 joyent/openjdk13
 joyent/openjdk14
 joyent/openjdk15
+joyent/openssh75
 joyent/ossec-agent
 joyent/ossec-local
 joyent/ossec-server
@@ -98,6 +97,7 @@ wip/pyzor
 wip/riak
 wip/ruby-xmpp4r
 wip/runit
+wip/rust
 wip/smstools
 wip/spread4
 wip/swftools

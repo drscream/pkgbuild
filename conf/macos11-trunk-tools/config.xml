@@ -78,7 +78,7 @@
   <builders>
     <hudson.tasks.Shell>
       <command>#!/bin/bash
-export PKGBUILD=macos15-trunk-tools
+export PKGBUILD=macos11-trunk-tools
 /Volumes/data/pkgbuild/scripts/run-jenkins-tools</command>
     </hudson.tasks.Shell>
   </builders>
